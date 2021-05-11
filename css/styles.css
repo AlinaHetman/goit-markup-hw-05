@@ -128,7 +128,7 @@ img {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link .link-current {
     color: var(--tittle-cl);
@@ -175,7 +175,8 @@ img {
     color: var(--main-text-cl);
     background-color: var(--second-bg);
     border: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover,
 .btn:focus {
@@ -192,13 +193,14 @@ img {
 }
 .btn-set {
     margin-left: 8px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, border-color, backgroud-color, box-shadow, box-shadow;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-set:hover,
 .btn-set:focus {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    background-color: var(--button-bg);
+    background: var(--button-bg);
     color: var(--alt-tittle-cl);
 }
 .pointer {
@@ -306,7 +308,6 @@ img {
     width: 20px;
     height: 20px;
     fill: var(--socials);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon-svg {
     width: 20px;
@@ -317,12 +318,11 @@ img {
     width: 106px;
     height: 60px;
     fill: var(--socials);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .advantage-icon-svg {
     width: 70px;
     height: 70px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-svg {
     width: 11px;
@@ -336,19 +336,20 @@ img {
     height: 10px;
     fill: var(--alt-text-cl);
     margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tel-svg {
     width: 10px;
     height: 16px;
     fill: var(--alt-text-cl);
     margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-item {
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--alt-text-cl);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-item:focus .mail-svg,
 .header-item:hover .mail-svg {
@@ -359,7 +360,6 @@ img {
     align-items: center;
     justify-content: center;
     color: var(--alt-text-cl);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-item2:focus .tel-svg,
 .header-item2:hover .tel-svg {
@@ -373,7 +373,8 @@ img {
     height: 44px;
     background-color: var(--card-bg);
     border-radius: 50%;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, background-color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon-link {
     display: flex;
@@ -383,7 +384,7 @@ img {
     height: 44px;
     background-color: var(--footer-socials);
     border-radius: 50%;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-icon-link {
     display: flex;
@@ -393,6 +394,7 @@ img {
     height: 92px;
     border: 1px solid var(--socials);
     border-radius: 4px;
+    transition: border-color 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adventage-icon-link {
     display: flex;
@@ -462,11 +464,6 @@ img {
     background: var(--card-bg);
     max-width: 370px;
     min-height: 404px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.product-list-item:focus,
-.product-list-item:hover {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card {
@@ -516,11 +513,21 @@ img {
     display: block;
     background-color: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.overlay-img:hover .overlay {
+.product-link-a:hover .overlay,
+.product-link-a:focus .overlay {
     transform: translateY(0);
 }
+.product-link-a {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-link-a:focus,
+.product-link-a:hover {
+    display: block;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .overlay-text {
     font-size: 18px;
     line-height: 1.56;
@@ -562,10 +569,11 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(43, 40, 40, 0.7);
+    opacity: 1;
+    transition: opacity 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
-.is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
-    visibility: hidden;
     pointer-events: none;
 }
 .modal {
@@ -573,7 +581,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffff;
+    background-color: var(--card-bg);
     width: 528px;
     height: 581px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
